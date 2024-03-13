@@ -247,7 +247,6 @@
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
-
             {
               "description": "Prevention of comment post if not logged in.",
               "importance": "must",
@@ -368,11 +367,6 @@
             },
             {
               "description": "Error display for viewing non-existent topics.",
-              "importance": "must",
-              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
-            },
-            {
-              "description": "Invalid values for any other parametrics or queries the app accepts are handled (400)",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
