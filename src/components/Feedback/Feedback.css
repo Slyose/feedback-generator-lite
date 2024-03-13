@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  color: white;
+}
+
+h1 {
+  color: #007bff;
+}
+
+p {
+  line-height: 1.6;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+* {
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  border-radius: 5em;
+  border-style: solid;
+  flex-wrap: wrap;
+}
+
+.taskListItem {
+  display: flex;
+  flex-direction: column;
+  max-width: 100px;
+}
+
+button {
+  background-color: #0080ff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 5em;
+  height: 4em;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #004094;
+}
+
+button:last-child {
+  margin-right: 0;
+}
+
+h3 {
+  margin-left: 5em;
+}
+
+.feedbackMessageContainer {
+  
+}

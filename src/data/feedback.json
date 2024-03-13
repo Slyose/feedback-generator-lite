@@ -1,0 +1,392 @@
+{
+  "sprints": [
+    {
+      "id": "Frontend-NC-News",
+      "tasks": [
+        {
+          "taskName": "Create React project and public repo",
+          "taskNumber": 1,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "React app correctly set in the root of the repo.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "Nicely done, project setup correctly. Code away!",
+                  "evenBetterIf": "Make sure to move app files out of any nested folder created by create-react-app. Otherwise, this will be a pain when we get to seeding!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "Enable CORS",
+          "taskNumber": 2,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "CORS enabled following the backend hosting guide.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "CORS setup correctly to allow for frontend to backend communication, well done",
+                  "evenBetterIf": "Ensure to follow the specific steps mentioned in the BE hosting guide for enabling CORS."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "Planning",
+          "taskNumber": 3,
+          "advanced": true,
+          "aspects": [
+            {
+              "description": "Mobile-first wireframes and component trees are well-defined.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "Wireframes reflect a mobile-first design approach.",
+                  "evenBetterIf": "Cover all planned pages in wireframe with clear flow."
+                }
+              ]
+            },
+            {
+              "description": "Distinction between API endpoints for accessing data and page routes is clear.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "API endpoints and frontend paths are correctly distinguished in planning.",
+                  "evenBetterIf": "Check understanding if there seems to be confusion between API endpoints and frontend paths."
+                }
+              ]
+            },
+            {
+              "description": "Frontend paths for pages well planned.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "Expected frontend paths for each page are specified.",
+                  "evenBetterIf": "Include a clear indication of what API the component data will come from."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "View all articles",
+          "taskNumber": 4,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "List of all articles viewable on the home page or via a dedicated link.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Requests to API for articles are managed in a separate utilities file.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "User receives visual feedback during data loading.",
+              "importance": "should",
+              "feedbacks": []
+            },
+            {
+              "description": "Pagination for articles list (optional at this stage).",
+              "importance": "could",
+              "feedbacks": []
+            },
+            {
+              "description": "Responsive design considerations for articles list.",
+              "importance": "must",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "View individual article",
+          "taskNumber": 5,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Single article viewable on its own page.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Navigation to article page from all articles list.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Article data fetched from API using article ID in URL.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Page renders correctly on refresh, not relying on previous state.",
+              "importance": "must",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "View list of comments associated with an article",
+          "taskNumber": 6,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Comments list viewable on the article page.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "UI accounts for articles without comments.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Visual feedback provided during comments data loading.",
+              "importance": "should",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "Vote on article",
+          "taskNumber": 7,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Ability to vote on an article with immediate UI update.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Vote change persists on page refresh.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "User notified if vote update request fails.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Optional: Downvote functionality.",
+              "importance": "could",
+              "feedbacks": []
+            },
+            {
+              "description": "Optional: Limit users to one vote in either direction.",
+              "importance": "could",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "Post article comment",
+          "taskNumber": 8,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Logged-in users can post comments.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Feedback provided on successful comment post.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Feedback provided on unsuccessful comment post.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Prevention of comment post if not logged in.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Prevention of multiple submissions by disabling post button.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Optional: Login functionality implementation.",
+              "importance": "could",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "View articles by topic",
+          "taskNumber": 9,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Articles filterable by topic via UI.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "API used to filter topics rather than local filtering.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "UI element (links/dropdown) for topic navigation.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Consistent UI between all topics and filtered topics view.",
+              "importance": "should",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "Sort articles",
+          "taskNumber": 10,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Sorting of articles by date/votes/comment count.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "UI elements allow for sorting control.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Default sorting by date in descending order.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Optional: URL reflects sort options.",
+              "importance": "could",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "Delete comments",
+          "taskNumber": 11,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Logged-in user can delete their own comments.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Visual feedback for ongoing delete requests.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Feedback provided on successful/unsuccessful deletion.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Prevention of multiple delete requests.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Optional: Implement login functionality for comment deletion.",
+              "importance": "could",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "Error handling",
+          "taskNumber": 12,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "404 page redirection for nonexistent endpoints.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Error display for viewing non-existent articles or topics.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Form submission rejections for incomplete or invalid inputs.",
+              "importance": "must",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "Deploy app",
+          "taskNumber": 13,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Navigable app through hosted link without errors.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Correct routing setup for refreshes on sub-routes.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Use of production deployments for public URL.",
+              "importance": "must",
+              "feedbacks": []
+            }
+          ]
+        },
+        {
+          "taskName": "README",
+          "taskNumber": 14,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Link to deployed version and back end repo.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "General app information and navigation instructions.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Specification of minimum Node version required.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Instructions for running the project locally.",
+              "importance": "must",
+              "feedbacks": []
+            },
+            {
+              "description": "Styling considerations and readability of instructions.",
+              "importance": "must",
+              "feedbacks": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
