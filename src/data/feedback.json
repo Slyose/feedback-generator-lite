@@ -82,27 +82,27 @@
             {
               "description": "List of all articles viewable on the home page or via a dedicated link.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Requests to API for articles are managed in a separate utilities file.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "User receives visual feedback during data loading.",
               "importance": "should",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Pagination for articles list (optional at this stage).",
               "importance": "could",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Responsive design considerations for articles list.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -114,22 +114,22 @@
             {
               "description": "Single article viewable on its own page.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Navigation to article page from all articles list.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Article data fetched from API using article ID in URL.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Page renders correctly on refresh, not relying on previous state.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -141,17 +141,17 @@
             {
               "description": "Comments list viewable on the article page.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "UI accounts for articles without comments.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Visual feedback provided during comments data loading.",
               "importance": "should",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -163,27 +163,27 @@
             {
               "description": "Ability to vote on an article with immediate UI update.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Vote change persists on page refresh.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "User notified if vote update request fails.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Optional: Downvote functionality.",
               "importance": "could",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Optional: Limit users to one vote in either direction.",
               "importance": "could",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -195,32 +195,32 @@
             {
               "description": "Logged-in users can post comments.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Feedback provided on successful comment post.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Feedback provided on unsuccessful comment post.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Prevention of comment post if not logged in.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Prevention of multiple submissions by disabling post button.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Optional: Login functionality implementation.",
               "importance": "could",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -232,22 +232,22 @@
             {
               "description": "Articles filterable by topic via UI.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "API used to filter topics rather than local filtering.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "UI element (links/dropdown) for topic navigation.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Consistent UI between all topics and filtered topics view.",
               "importance": "should",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -259,22 +259,22 @@
             {
               "description": "Sorting of articles by date/votes/comment count.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "UI elements allow for sorting control.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Default sorting by date in descending order.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Optional: URL reflects sort options.",
               "importance": "could",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -286,27 +286,27 @@
             {
               "description": "Logged-in user can delete their own comments.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Visual feedback for ongoing delete requests.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Feedback provided on successful/unsuccessful deletion.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Prevention of multiple delete requests.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Optional: Implement login functionality for comment deletion.",
               "importance": "could",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -318,17 +318,17 @@
             {
               "description": "404 page redirection for nonexistent endpoints.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Error display for viewing non-existent articles or topics.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Form submission rejections for incomplete or invalid inputs.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -340,17 +340,17 @@
             {
               "description": "Navigable app through hosted link without errors.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Correct routing setup for refreshes on sub-routes.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Use of production deployments for public URL.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -362,27 +362,27 @@
             {
               "description": "Link to deployed version and back end repo.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "General app information and navigation instructions.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Specification of minimum Node version required.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Instructions for running the project locally.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
               "description": "Styling considerations and readability of instructions.",
               "importance": "must",
-              "feedbacks": []
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         }

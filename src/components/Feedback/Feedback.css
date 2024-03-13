@@ -29,8 +29,8 @@ input[type="checkbox"] {
   flex-direction: row;
   gap: 2em;
   border-radius: 5em;
-  border-style: solid;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .taskListItem {
@@ -40,7 +40,7 @@ input[type="checkbox"] {
 }
 
 button {
-  background-color: #0080ff;
+  background-color: #077ef5;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -68,6 +68,14 @@ h3 {
   margin-left: 5em;
 }
 
+.feedbackContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.feedbackSection {
+}
+
 .feedbackMessageContainer {
-  
+  border-style: solid;
 }

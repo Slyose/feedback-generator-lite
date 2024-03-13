@@ -8,10 +8,6 @@ import Feedback from "./components/Feedback/Feedback.jsx";
 function App() {
   const [feedbacks, setFeedbacks] = useState(feedback);
 
-  // useEffect(() => {
-  //   console.log(feedbacks.sprints[0]);
-  // }, []);
-
   return (
     <>
       <Routes>

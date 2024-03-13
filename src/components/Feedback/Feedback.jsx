@@ -1,31 +1,57 @@
-import { useEffect, useState } from "react";
-import "./Feedback.css";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import "./Feedback.css";
 
 export default function Feedback(props) {
-  const { feedbacks, setFeedbacks } = props;
+  const { feedbacks } = props;
   const { sprintID } = useParams();
-  // const [feedbackData, setFeedbackData] = useState()
-  const sprint = feedbacks.sprints.find((sprint) => sprintID === sprint.id);
+  const sprint = feedbacks.sprints.find((s) => s.id === sprintID);
 
   const [chosenTaskNum, setChosenTaskNum] = useState(null);
-  const [chosenTaskAspects, setChosenTaskAspects] = useState(null);
   const [chosenTaskData, setChosenTaskData] = useState(null);
-  const [feedbackMessage, setFeedbackMessage] = useState("Great job bucko!");
-  console.log(sprintID);
-  console.log(sprint);
+  const [feedbackChoices, setFeedbackChoices] = useState({});
+  const [feedbackMessages, setFeedbackMessages] = useState([]);
+  const [isEditMode, setIsEditMode] = useState(false);
 
   useEffect(() => {
-    const chosenTask = sprint.tasks.find((task) => {
-      return task.taskNumber === chosenTaskNum;
-    });
+    const chosenTask = sprint?.tasks.find(
+      (task) => task.taskNumber === chosenTaskNum
+    );
     setChosenTaskData(chosenTask);
+  }, [chosenTaskNum, sprint?.tasks]);
+
+  useEffect(() => {
+    // Reset feedbackChoices whenever a new task is selected
+    setFeedbackChoices({});
   }, [chosenTaskNum]);
 
-  
+  useEffect(() => {
+    const messages = chosenTaskData?.aspects
+      .map((aspect, index) => {
+        const choice = feedbackChoices[index];
+        return choice ? `${aspect.feedbacks[0][choice]}` : null;
+      })
+      .filter(Boolean);
+
+    setFeedbackMessages(messages);
+  }, [feedbackChoices, chosenTaskData]);
 
   const onTaskClick = (taskNumber) => {
     setChosenTaskNum(taskNumber);
+  };
+
+  const handleFeedbackChange = (aspectIndex, choice) => {
+    setFeedbackChoices((prevChoices) => ({
+      ...prevChoices,
+      [aspectIndex]: choice,
+    }));
+  };
+
+  const handleCopyToClipboard = () => {
+    const feedbackText = feedbackMessages.join("\n");
+    navigator.clipboard.writeText(feedbackText).then(() => {
+      alert("Feedback copied to clipboard!");
+    });
   };
 
   return (
@@ -33,47 +59,79 @@ export default function Feedback(props) {
       <Link to="/">
         <h1>Feedback Gen Lite!</h1>
       </Link>
-      <p>Let's generate some feedback for {sprint.id}!</p>
-      <p>Choose a task Number:</p>
-      <div className="taskList">
-        {sprint.tasks.map((task) => {
-          return (
-            <div className="taskListItem">
-              <button
-                onClick={() => onTaskClick(task.taskNumber)}
-                key={task.taskNumber}
-              >
+      <>
+        <p>Let's generate some feedback for {sprint.id}!</p>
+        <p>Choose a task Number:</p>
+        <div className="taskList">
+          {sprint.tasks.map((task) => (
+            <div className="taskListItem" key={task.taskNumber}>
+              <button onClick={() => onTaskClick(task.taskNumber)}>
                 {task.taskNumber}
               </button>
-              <text>{task.taskName}</text>
+              <span>{task.taskName}</span>
             </div>
-          );
-        })}
-      </div>
-      {chosenTaskNum && chosenTaskData ? (
-        <>
-          <h2>
-            Task #{chosenTaskNum}: {chosenTaskData.taskName}
-          </h2>
-          <div className="feedbackSection">
-            {chosenTaskData.aspects.map((aspect) => {
-              console.log(aspect.description);
-              console.log(aspect.feedbacks[0]);
-              // console.log(aspect.feedbacks);
-              return (
-                // A card of feedback
-                <>
-                  {" "}
-                  <h3>{aspect.description}</h3>
-                </>
-              );
-            })}
-            <div className="feedbackMessageContainer">
-            <p>{feedbackMessage}</p>
+          ))}
+        </div>
+        {chosenTaskNum && chosenTaskData && !isEditMode && (
+          <>
+            <h2>
+              Task #{chosenTaskNum}: {chosenTaskData.taskName}
+            </h2>
+            <div className="feedbackContainer">
+              <div className="feedbackSection">
+                {chosenTaskData.aspects.map((aspect, index) => (
+                  <div key={index}>
+                    <h3>{aspect.description}</h3>
+                    <label>
+                      <input
+                        type="radio"
+                        name={`feedback-${index}`}
+                        value="whatWentWell"
+                        onChange={(e) =>
+                          handleFeedbackChange(index, e.target.value)
+                        }
+                        checked={feedbackChoices[index] === "whatWentWell"}
+                      />
+                      What Went Well
+                    </label>
+                    <label>
+                      <input
+                        type="radio"
+                        name={`feedback-${index}`}
+                        value="evenBetterIf"
+                        onChange={(e) =>
+                          handleFeedbackChange(index, e.target.value)
+                        }
+                        checked={feedbackChoices[index] === "evenBetterIf"}
+                      />
+                      Even Better If
+                    </label>
+                  </div>
+                ))}
+                <button
+                  onClick={() => {
+                    setIsEditMode(!isEditMode);
+                  }}
+                >
+                  Enable Edit mode
+                </button>
+              </div>
+              <div className="feedbackMessageContainer">
+                <ul>
+                  {feedbackMessages
+                    ? feedbackMessages.map((message, index) => (
+                        <li key={index}>{message}</li>
+                      ))
+                    : null}
+                </ul>
+                <button onClick={handleCopyToClipboard}>
+                  Save to Clipboard
+                </button>
+              </div>
             </div>
-          </div>
-        </>
-      ) : null}
+          </>
+        )}
+      </>
     </>
   );
 }
