@@ -104,58 +104,60 @@ export default function Feedback({ feedbacks, setFeedbacks }) {
             Task #{chosenTaskNum}: {chosenTaskData.taskName}
           </h2>
           <div className="feedbackContainer">
-            {isEditMode
-              ? chosenTaskData.aspects.map((aspect, index) => (
-                  <FeedbackCard
-                    key={index}
-                    aspect={aspect}
-                    onSave={(aspect, editFeedback) => {
-                      handleSave(aspect, editFeedback);
-                    }}
-                    onCancel={() => setIsEditMode(false)}
-                  />
-                ))
-              : chosenTaskData.aspects.map((aspect, index) => (
-                  <div key={index}>
-                    <h3>{aspect.description}</h3>
-                    <label>
-                      <input
-                        type="radio"
-                        name={`feedback-${index}`}
-                        value="whatWentWell"
-                        onChange={(e) =>
-                          handleFeedbackChange(index, e.target.value)
-                        }
-                        checked={feedbackChoices[index] === "whatWentWell"}
-                      />
-                      What Went Well
-                    </label>
-                    <label>
-                      <input
-                        type="radio"
-                        name={`feedback-${index}`}
-                        value="evenBetterIf"
-                        onChange={(e) =>
-                          handleFeedbackChange(index, e.target.value)
-                        }
-                        checked={feedbackChoices[index] === "evenBetterIf"}
-                      />
-                      Even Better If
-                    </label>
-                  </div>
-                ))}
-          </div>
-          <div className="feedbackMessageContainer">
-            <ul>
-              {feedbackMessages && (
-                <>
-                  {feedbackMessages.map((message, index) => (
-                    <li key={index}>{message}</li>
+            <div>
+              {isEditMode
+                ? chosenTaskData.aspects.map((aspect, index) => (
+                    <FeedbackCard
+                      key={index}
+                      aspect={aspect}
+                      onSave={(aspect, editFeedback) => {
+                        handleSave(aspect, editFeedback);
+                      }}
+                      onCancel={() => setIsEditMode(false)}
+                    />
+                  ))
+                : chosenTaskData.aspects.map((aspect, index) => (
+                    <div key={index}>
+                      <h3>{aspect.description}</h3>
+                      <label>
+                        <input
+                          type="radio"
+                          name={`feedback-${index}`}
+                          value="whatWentWell"
+                          onChange={(e) =>
+                            handleFeedbackChange(index, e.target.value)
+                          }
+                          checked={feedbackChoices[index] === "whatWentWell"}
+                        />
+                        What Went Well
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          name={`feedback-${index}`}
+                          value="evenBetterIf"
+                          onChange={(e) =>
+                            handleFeedbackChange(index, e.target.value)
+                          }
+                          checked={feedbackChoices[index] === "evenBetterIf"}
+                        />
+                        Even Better If
+                      </label>
+                    </div>
                   ))}
-                </>
-              )}
-            </ul>
-            <button onClick={handleCopyToClipboard}>Save to Clipboard</button>
+            </div>
+            <div className="feedbackMessageContainer">
+              <ul>
+                {feedbackMessages && (
+                  <>
+                    {feedbackMessages.map((message, index) => (
+                      <li key={index}>{message}</li>
+                    ))}
+                  </>
+                )}
+              </ul>
+              <button onClick={handleCopyToClipboard}>Save to Clipboard</button>
+            </div>
           </div>
         </>
       )}

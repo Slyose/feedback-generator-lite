@@ -63,23 +63,25 @@ button:last-child {
   margin-right: 0;
 }
 
-h3 {
-  margin-left: 5em;
-}
-
 .feedbackContainer {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto;
 }
 
 .feedbackMessageContainer {
-  margin-top: 5em;
   padding-top: 1.5em;
   padding-bottom: 5em;
   border-style: solid;
 }
 
+.feedbackItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 textarea {
   width: 40%;
-  height: 30%;
+  height: 6em;
 }

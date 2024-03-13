@@ -15,18 +15,20 @@ function FeedbackCard({ aspect, onSave, onCancel }) {
   return (
     <div>
       <h3>{aspect.description}</h3>
-      <textarea
-        placeholder="What Went Well"
-        value={editFeedback.whatWentWell}
-        onChange={(e) => handleEditChange("whatWentWell", e.target.value)}
-      />
-      <textarea
-        placeholder="Even Better If"
-        value={editFeedback.evenBetterIf}
-        onChange={(e) => handleEditChange("evenBetterIf", e.target.value)}
-      />
-      <button onClick={() => onSave(aspect, editFeedback)}>Save</button>
-      <button onClick={onCancel}>Cancel</button>
+      <div className="feedbackItem">
+        <textarea
+          placeholder="What Went Well"
+          value={editFeedback.whatWentWell}
+          onChange={(e) => handleEditChange("whatWentWell", e.target.value)}
+        />
+        <textarea
+          placeholder="Even Better If"
+          value={editFeedback.evenBetterIf}
+          onChange={(e) => handleEditChange("evenBetterIf", e.target.value)}
+        />
+        <button onClick={() => onSave(aspect, editFeedback)}>Save</button>
+        <button onClick={onCancel}>Cancel</button>
+      </div>
     </div>
   );
 }
