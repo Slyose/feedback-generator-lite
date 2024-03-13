@@ -238,7 +238,12 @@
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
-              "description": "On success, comment should NOT be refetched from the api. Update state locally.",
+              "description": "On success, should show new comment on the top. ",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Comments should NOT be refetched from the api after a POST. (Update state using the returned newComment).",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
