@@ -58,7 +58,6 @@ export default function Feedback({ feedbacks, setFeedbacks }) {
       (a) => a.description === aspect.description
     );
 
-    console.log(aspectIndex);
     if (aspectIndex !== -1) {
       chosenTaskData.aspects[aspectIndex].feedbacks[0] = editedFeedback;
     }
@@ -74,6 +73,7 @@ export default function Feedback({ feedbacks, setFeedbacks }) {
       if (taskIndex !== -1) {
         updatedFeedbacks.sprints[sprintIndex].tasks[taskIndex] = chosenTaskData;
         setFeedbacks(updatedFeedbacks);
+        localStorage.setItem("feedbacks", JSON.stringify(updatedFeedbacks));
       }
     }
   };

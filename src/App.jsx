@@ -6,12 +6,27 @@ import Home from "./components/Home/Home.jsx";
 import Feedback from "./components/Feedback/Feedback.jsx";
 
 function App() {
-  const [feedbacks, setFeedbacks] = useState(feedback);
+  const [feedbacks, setFeedbacks] = useState(null);
 
-  return (
+  useEffect(() => {
+    const storedFeedbacks = localStorage.getItem("feedbacks");
+    console.log({ storedFeedbacks });
+    if (storedFeedbacks) {
+      setFeedbacks(JSON.parse(storedFeedbacks));
+    } else {
+      setFeedbacks(feedback);
+    }
+  }, []);
+
+  return feedbacks ? (
     <>
       <Routes>
-        <Route path="/" element={<Home feedbackData={feedbacks} />} />
+        <Route
+          path="/"
+          element={
+            <Home feedbackData={feedbacks} setFeedbacks={setFeedbacks} />
+          }
+        />
         <Route
           path="/sprint/:sprintID"
           element={
@@ -20,6 +35,8 @@ function App() {
         />
       </Routes>
     </>
+  ) : (
+    <h1>Loading feedback data....</h1>
   );
 }
 

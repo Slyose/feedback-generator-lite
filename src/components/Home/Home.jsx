@@ -1,9 +1,27 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
+import Feedback from "../../data/feedback.json";
+import { useState } from "react";
 
 export default function Home(props) {
-  const { feedbackData } = props;
-  console.log(feedbackData.sprints);
+  const { feedbackData, setFeedbacks } = props;
+  const [isFirstClick, setIsFirstClick] = useState(true);
+  const [hasBeenReset, setHasBeenReset] = useState(false);
+
+  function handleClick() {
+    if (isFirstClick) {
+      setIsFirstClick(false);
+    }
+    if (!isFirstClick) {
+      setIsFirstClick(true);
+      setHasBeenReset(true);
+      setFeedbacks(Feedback);
+      localStorage.removeItem("feedbacks");
+      setTimeout(() => {
+        setHasBeenReset(false);
+      }, 3000);
+    }
+  }
 
   return (
     <>
@@ -17,6 +35,16 @@ export default function Home(props) {
           <Link to={`/sprint/${sprint.id}`}>{sprint.id}</Link>
         </p>
       ))}
+      <button
+        onClick={() => {
+          handleClick();
+        }}
+      >
+        {isFirstClick ? "reset feedback data?" : "are you SURE?"}
+      </button>
+      {hasBeenReset && (
+        <p>Local storage cleared! Hope you meant to do that ;D</p>
+      )}
     </>
   );
 }
