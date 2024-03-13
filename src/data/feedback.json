@@ -130,6 +130,26 @@
               "description": "Page renders correctly on refresh, not relying on previous state.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Has an isLoading state that gives the user visual feedback",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "URL should show article id in the format of /articles/:article_id",
+              "importance": "should",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Requests to api should be handled separately in a utils file using axios",
+              "importance": "should",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Requests to api should be handled separately in a utils file using axios",
+              "importance": "should",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
@@ -147,6 +167,16 @@
               "description": "UI accounts for articles without comments.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Components should not be too large. Consider seperate component to reduce bloat",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": "Consider seperate a seperate component for your comments in order to reduce bloat on the main article component."
+                }
+              ]
             },
             {
               "description": "Visual feedback provided during comments data loading.",
@@ -208,6 +238,12 @@
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
+              "description": "On success, comment should NOT be refetched from the api. Update state locally.",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+
+            {
               "description": "Prevention of comment post if not logged in.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
@@ -225,62 +261,8 @@
           ]
         },
         {
-          "taskName": "View articles by topic",
-          "taskNumber": 9,
-          "advanced": false,
-          "aspects": [
-            {
-              "description": "Articles filterable by topic via UI.",
-              "importance": "must",
-              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
-            },
-            {
-              "description": "API used to filter topics rather than local filtering.",
-              "importance": "must",
-              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
-            },
-            {
-              "description": "UI element (links/dropdown) for topic navigation.",
-              "importance": "must",
-              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
-            },
-            {
-              "description": "Consistent UI between all topics and filtered topics view.",
-              "importance": "should",
-              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
-            }
-          ]
-        },
-        {
-          "taskName": "Sort articles",
-          "taskNumber": 10,
-          "advanced": false,
-          "aspects": [
-            {
-              "description": "Sorting of articles by date/votes/comment count.",
-              "importance": "must",
-              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
-            },
-            {
-              "description": "UI elements allow for sorting control.",
-              "importance": "must",
-              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
-            },
-            {
-              "description": "Default sorting by date in descending order.",
-              "importance": "must",
-              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
-            },
-            {
-              "description": "Optional: URL reflects sort options.",
-              "importance": "could",
-              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
-            }
-          ]
-        },
-        {
           "taskName": "Delete comments",
-          "taskNumber": 11,
+          "taskNumber": 9,
           "advanced": false,
           "aspects": [
             {
@@ -311,22 +293,81 @@
           ]
         },
         {
+          "taskName": "View articles by topic",
+          "taskNumber": 10,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Articles filterable by topic via UI.",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "API used to filter topics rather than local filtering.",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "UI element (links/dropdown) for topic navigation.",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Consistent UI between all topics and filtered topics view.",
+              "importance": "should",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            }
+          ]
+        },
+        {
+          "taskName": "Sort articles",
+          "taskNumber": 11,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Sorting of articles by date/votes/comment count.",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "UI elements allow for sorting control.",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Default sorting by date in descending order.",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Optional: URL reflects sort options.",
+              "importance": "could",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            }
+          ]
+        },
+        {
           "taskName": "Error handling",
           "taskNumber": 12,
           "advanced": false,
           "aspects": [
             {
-              "description": "404 page redirection for nonexistent endpoints.",
+              "description": "404 page redirection for nonexistent path.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
-              "description": "Error display for viewing non-existent articles or topics.",
+              "description": "Error display for viewing non-existent articles.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
-              "description": "Form submission rejections for incomplete or invalid inputs.",
+              "description": "Error display for viewing non-existent topics.",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Invalid values for any other parametrics or queries the app accepts are handled (400)",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
