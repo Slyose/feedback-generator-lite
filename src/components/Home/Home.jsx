@@ -36,6 +36,7 @@ export default function Home(props) {
         </p>
       ))}
       <button
+      className="deletionButton"
         onClick={() => {
           handleClick();
         }}

@@ -7,7 +7,7 @@ If you want more aspects for a task, go in the feedbacks.json and add them. In o
 # TODO
 
 - ~~Persistent storage of user-generated feedback~~  Done!
+- Ability to add aspects via the frontend
 - Removal of unnecessary nesting in an array of feedback
 - Replacemnet of json file in favour of a proper db & backend
-- Ability to add aspects via the frontend
 - Host

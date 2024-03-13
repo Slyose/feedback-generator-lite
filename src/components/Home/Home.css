@@ -1,3 +1,10 @@
 * {
   text-align: center;
 }
+.deletionButton {
+  background-color: rgb(188, 52, 52);
+  height: 3em;
+}
+.deletionButton:hover {
+  background-color: rgb(223, 16, 16);
+}
