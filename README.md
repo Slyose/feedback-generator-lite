@@ -15,6 +15,7 @@ In order to update the site to introduce those new aspects, you will have to res
 # TODO
 
 - ~~Persistent storage of user-generated feedback~~ Done!
+- Add more structure to the generated feedback, greeting messages and sign offs, as well as giving messages with markdown styling and WWW EBI structure to make feedback easier to read.
 - Ability to add aspects via the frontend
 - Removal of unnecessary nesting in an array of feedback
 - Replacemnet of json file in favour of a proper db & backend
