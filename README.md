@@ -6,11 +6,10 @@ If you want more aspects for a task, go in the feedbacks.json and add them
 
 **Added feedbacks currently live only in state, so if you refresh the page you WILL lose any custom feedback that was added in edit mode.**
 
-# React + Vite
+# TODO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Persistent storage of user-generated feedbacks
+- Removal of unnecessary nesting in an array of feedbacks
+- Replacemnet of json file in favour of a proper db & backend
+- Ability to add aspects via the frontend
+- Host
