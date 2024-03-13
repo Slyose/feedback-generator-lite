@@ -28,7 +28,6 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: row;
   gap: 2em;
-  border-radius: 5em;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -73,9 +72,14 @@ h3 {
   grid-template-columns: auto 1fr;
 }
 
-.feedbackSection {
+.feedbackMessageContainer {
+  margin-top: 5em;
+  padding-top: 1.5em;
+  padding-bottom: 5em;
+  border-style: solid;
 }
 
-.feedbackMessageContainer {
-  border-style: solid;
+textarea {
+  width: 40%;
+  height: 30%;
 }
