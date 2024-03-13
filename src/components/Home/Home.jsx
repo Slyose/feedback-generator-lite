@@ -30,13 +30,16 @@ export default function Home(props) {
         Let's generate some feedback. Don't get lazy, but be smart about making
         feedback for common mistakes!
       </p>
+      <p>
+        Also, don't neglect the positive feedback for things they've nailed!
+      </p>
       {feedbackData.sprints.map((sprint) => (
         <p key={sprint.id}>
           <Link to={`/sprint/${sprint.id}`}>{sprint.id}</Link>
         </p>
       ))}
       <button
-      className="deletionButton"
+        className="deletionButton"
         onClick={() => {
           handleClick();
         }}
