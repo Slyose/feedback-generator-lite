@@ -211,6 +211,11 @@
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
+              "description": "Ideally should use one function to handle both upvotes and downvotes",
+              "importance": "could",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
               "description": "Optional: Limit users to one vote in either direction.",
               "importance": "could",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
@@ -238,6 +243,11 @@
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
+              "description": "Comment bodies should be multi-line i.e. textarea over input.",
+              "importance": "should",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
               "description": "On success, should show new comment on the top. ",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
@@ -254,6 +264,11 @@
             },
             {
               "description": "Prevention of multiple submissions by disabling post button.",
+              "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "User should not be able to post empty comments.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
