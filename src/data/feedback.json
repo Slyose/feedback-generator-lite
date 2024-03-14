@@ -285,8 +285,13 @@
           "advanced": false,
           "aspects": [
             {
-              "description": "Logged-in user can delete their own comments.",
+              "description": "Logged-in user can delete comments.",
               "importance": "must",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "User only able to delete their own comments",
+              "importance": "could",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
@@ -295,18 +300,18 @@
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
-              "description": "Feedback provided on successful/unsuccessful deletion.",
+              "description": "Feedback provided on successful deletion.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
-              "description": "Prevention of multiple delete requests.",
+              "description": "Feedback provided on unsuccessful deletion.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
-              "description": "Optional: Implement login functionality for comment deletion.",
-              "importance": "could",
+              "description": "User should not be able to click the delete button (or delete a comment) multiple times.",
+              "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
