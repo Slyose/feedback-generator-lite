@@ -47,7 +47,10 @@ export default function Feedback({ feedbacks, setFeedbacks }) {
   };
 
   const handleCopyToClipboard = () => {
-    const feedbackText = feedbackMessages.join("\n");
+    const dashedFeedback = feedbackMessages.map((feedback) => {
+      return `- ${feedback}`;
+    });
+    const feedbackText = dashedFeedback.join("\n");
     navigator.clipboard.writeText(feedbackText).then(() => {
       alert("Feedback copied to clipboard!");
     });
