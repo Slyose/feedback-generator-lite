@@ -10,7 +10,6 @@ function App() {
 
   useEffect(() => {
     const storedFeedbacks = localStorage.getItem("feedbacks");
-    console.log({ storedFeedbacks });
     if (storedFeedbacks) {
       setFeedbacks(JSON.parse(storedFeedbacks));
     } else {
