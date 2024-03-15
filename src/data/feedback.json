@@ -435,12 +435,12 @@
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
-              "description": "General app information and navigation instructions.",
+              "description": "General app info and description.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
-              "description": "Specification of minimum Node version required.",
+              "description": "Specifies minimum Node version needed to run locally.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
@@ -450,7 +450,7 @@
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             },
             {
-              "description": "Styling considerations and readability of instructions.",
+              "description": "Markdown styling considerations, instructions should be readable, with headings.",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
