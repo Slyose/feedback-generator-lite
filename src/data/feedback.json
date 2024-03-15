@@ -394,6 +394,11 @@
               "description": "Invalid values for any other parametrics or queries the app accepts are handled (400)",
               "importance": "must",
               "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
+            },
+            {
+              "description": "Should use one reuseable error page component",
+              "importance": "should",
+              "feedbacks": [{ "whatWentWell": "", "evenBetterIf": "" }]
             }
           ]
         },
