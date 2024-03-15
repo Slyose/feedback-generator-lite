@@ -20,6 +20,11 @@ div {
   text-align: center;
 }
 
+textarea {
+  width: 40%;
+  height: 6em;
+}
+
 input[type="checkbox"] {
   margin-right: 10px;
 }
@@ -81,7 +86,8 @@ button:last-child {
   align-items: center;
 }
 
-textarea {
-  width: 40%;
-  height: 6em;
+.successMessage {
+  color: lightgreen;
+  margin: 0;
+  padding: 0;
 }

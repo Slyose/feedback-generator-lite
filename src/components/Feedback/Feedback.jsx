@@ -12,6 +12,8 @@ export default function Feedback({ feedbacks, setFeedbacks }) {
   const [isEditMode, setIsEditMode] = useState(false);
   const [feedbackChoices, setFeedbackChoices] = useState({});
   const [feedbackMessages, setFeedbackMessages] = useState([]);
+  const [hasBeenCopiedToClipboard, setHasBeenCopiedToClipboard] =
+    useState(false);
 
   useEffect(() => {
     const chosenTask = sprint?.tasks.find(
@@ -52,7 +54,10 @@ export default function Feedback({ feedbacks, setFeedbacks }) {
     });
     const feedbackText = dashedFeedback.join("\n");
     navigator.clipboard.writeText(feedbackText).then(() => {
-      alert("Feedback copied to clipboard!");
+      setHasBeenCopiedToClipboard(true);
+      setTimeout(() => {
+        setHasBeenCopiedToClipboard(false);
+      }, 2000);
     });
   };
 
@@ -160,6 +165,11 @@ export default function Feedback({ feedbacks, setFeedbacks }) {
                 )}
               </ul>
               <button onClick={handleCopyToClipboard}>Save to Clipboard</button>
+              {hasBeenCopiedToClipboard && (
+                <p className="successMessage">
+                  Successfully copied to clipboard
+                </p>
+              )}
             </div>
           </div>
         </>
