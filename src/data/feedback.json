@@ -457,6 +457,649 @@
           ]
         }
       ]
+    },
+    {
+      "id": "backend-NC-News",
+      "tasks": [
+        {
+          "taskName": "GET /api/topics",
+          "taskNumber": 3,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 200, returns an array of topic objects with slug and description.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Optional: Status 404 Invalid path, may be handled with a custom error handler",
+              "importance": "could",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Optional: Status 500 error handling, acceptable to include a 500 error hanlder, do not need to test for this",
+              "importance": "could",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Should not include app.use(express.json())",
+              "importance": "should",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should not include app.listen() in app.js",
+              "importance": "should",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "GET /api",
+          "taskNumber": 3.5,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 200, JSON describing all the available endpoints.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Doesn't use a model to require in the data",
+              "importance": "should",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Required in the file directly instead of using fs readdfile.",
+              "importance": "should",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "The information in the endpoints.json file should be served up by an endpoint.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "GET /api/articles/:article_id",
+          "taskNumber": 4,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 200 test, should check for a specfic article id in the test",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Should use a flexible mathcer like expect.objectContaining or .toMatchObject",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 400 test, invalid ID, e.g. string of 'not-an-id'",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 404, non existent ID, e.g. 0 or 9999",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should return the data on an descriptive key eg article",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should make use of a parameterized query for article_id to protect against SQL injection.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": "To protect against SQL injection, we'd want to make use of a parameterized query for article_id."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "GET /api/articles",
+          "taskNumber": 5,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 200 test, array of article objects",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should check length of array if asserting inside a forEach.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Response includes comment_count, excludes body.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 200, should sort by created_at, desc by default",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should check the sort order in some way eg jest-sorted library.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should check length of array if asserting inside a forEach.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should return the data on an appropriate key eg articles",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "GET /api/articles/:article_id/comments",
+          "taskNumber": 6,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 200 test, array of comment objects for the specified article ",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should return the data on an appropriate key eg comments",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should also check the order of the comments in some way",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should check length of array if asserting inside a forEach.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 200, valid ID, but has no comments responds with an empty array of comments",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 400, invalid ID, e.g. string of 'not-an-id'",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 404, non existent ID, e.g. 0 or 9999",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "POST /api/articles/:article_id/comments",
+          "taskNumber": 7,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 201, created comment object",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 201, ignores unnecessary properties on req",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 400, invalid ID, e.g. string of 'not-an-id'",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 404, non existent ID, e.g. 0 or 9999",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 400, missing required field(s), e.g. no username or body properties",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 404, username does not exist",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+
+            {
+              "description": "Should return data on a descriptive key of comment",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "PATCH /api/articles/:article_id",
+          "taskNumber": 8,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 200, updated single article object.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 400, invalid ID, e.g. string of 'not-an-id'",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 404, non existent ID, e.g. 0 or 9999",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Optional: Status 200, if inc_votes is missing. Can also be a 400, but not ideal",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "DELETE /api/comments/:comment_id",
+          "taskNumber": 9,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 204, deletes comment from database",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 404, non existent ID, e.g 999",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 400, invalid ID, e.g 'not-an-id'",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "No response body: uses res.sendStatus(204) or res.status(204).send()",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Non-existent comment will need to be handled with a custom error handler",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "GET /api/users",
+          "taskNumber": 10,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 200, responds with array of user objects",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should check length of array if asserting inside a forEach.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "GET /api/articles (topic query)",
+          "taskNumber": 11,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 200, accepts topic query, e.g. ?topic=coding",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "should check that all returned objects have the queried topic.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 200, valid topic query, but has no articles responds with an empty array of articles, e.g. ?topic=paper",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Status 404, non-existent topic query, e.g. ?topic=bananas.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "The filtering should be handled by the db and not done manually.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Check for SQL injection (any method is acceptable)",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "taskName": "GET /api/articles/:article_id (comment count)",
+          "taskNumber": 12,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Status 200, single article object (including comment_count) ",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "this should be a new test rather than a refactor of a previous test (may not be possible if the previous test was too brittle.)",
+              "importance": "should",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Should be achieved with a single SQL query",
+              "importance": "should",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
