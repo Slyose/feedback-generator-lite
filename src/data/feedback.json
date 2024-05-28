@@ -463,7 +463,7 @@
       "tasks": [
         {
           "taskName": "GET /api/topics",
-          "taskNumber": 3,
+          "taskNumber": 2,
           "advanced": false,
           "aspects": [
             {
@@ -520,7 +520,7 @@
         },
         {
           "taskName": "GET /api",
-          "taskNumber": 3.5,
+          "taskNumber": 3,
           "advanced": false,
           "aspects": [
             {
