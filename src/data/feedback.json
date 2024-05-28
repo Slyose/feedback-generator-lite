@@ -725,16 +725,6 @@
               ]
             },
             {
-              "description": "should check length of array if asserting inside a forEach.",
-              "importance": "must",
-              "feedbacks": [
-                {
-                  "whatWentWell": "",
-                  "evenBetterIf": ""
-                }
-              ]
-            },
-            {
               "description": "should return the data on an appropriate key eg articles",
               "importance": "must",
               "feedbacks": [
