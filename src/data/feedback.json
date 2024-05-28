@@ -462,6 +462,43 @@
       "id": "backend-NC-News",
       "tasks": [
         {
+          "taskName": "Project setup and README",
+          "taskNumber": 1,
+          "advanced": false,
+          "aspects": [
+            {
+              "description": "Edit the README.md to remove the link to the initial instructions.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Add instructions on how to create the environment variables to clone your project and run it locally.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            },
+            {
+              "description": "Repo should not be nested in another folder.",
+              "importance": "must",
+              "feedbacks": [
+                {
+                  "whatWentWell": "",
+                  "evenBetterIf": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
           "taskName": "GET /api/topics",
           "taskNumber": 2,
           "advanced": false,
