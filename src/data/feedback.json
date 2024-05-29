@@ -618,7 +618,7 @@
               ]
             },
             {
-              "description": "Should use a flexible mathcer like expect.objectContaining or .toMatchObject",
+              "description": "Should use a flexible matcher like expect.objectContaining or .toMatchObject",
               "importance": "must",
               "feedbacks": [
                 {
